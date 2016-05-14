@@ -1,0 +1,3 @@
+FROM registry.access.redhat.com/rhel7.2
+
+sudo yum --nogpgcheck localinstall /tmp/sFlowTrend-linux-6_3.rpm
