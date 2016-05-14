@@ -6,5 +6,5 @@ RUN  curl -o /tmp/sFlowTrend-linux-6_3.rpm  http://www.inmon.com/products/sFlowT
 RUN yum --nogpgcheck localinstall /tmp/sFlowTrend-linux-6_3.rpm -y
 USER 85
 
-CMD /etc/init.d/sflowtrend-server    
+CMD /etc/init.d/sflowtrend-server start
 
