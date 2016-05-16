@@ -8,10 +8,9 @@ Docker image for sflow trend
 
 # Setup statistic collector 
 on each machine perform the following. where the target can be either 
- - Route, that is exposing the port 6343-tcp . In the example below its the the router with the port 6343-tcp 
  - ServiceIP (dns name won't work as the host knows nothing about the kube dns )
 
-sudo ovs-vsctl -- --id=@sflow create sflow agent=eth1 target=\"sflowcollector-temp.cloudapps.example.com\" header=128 sampling=32 polling=10 -- set bridge br0 sflow=@sflow
+sudo ovs-vsctl -- --id=@sflow create sflow agent=eth1 target=\"SERVICE_IP:6343\" header=128 sampling=32 polling=10 -- set bridge br0 sflow=@sflow
 
 
 Note the following playbook also sets up the collector on all nodes (bit basic at the mo)
