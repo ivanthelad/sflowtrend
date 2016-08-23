@@ -1,4 +1,7 @@
 FROM registry.access.redhat.com/rhel7.2
+RUN yum repolist --disablerepo=* && \
+    yum-config-manager --disable \* > /dev/null && \
+    yum-config-manager --enable rhel-7-server-rpms rhel-7-server-extras-rpms rhel-7-server-ose-3.2-rpms > /dev/null
 EXPOSE 6343/udp 8087
 USER root
 RUN yum install java-1.8.0 -y
